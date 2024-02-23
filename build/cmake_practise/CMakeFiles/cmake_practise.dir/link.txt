@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall  -O0 -Wall -g2 -ggdb   CMakeFiles/cmake_practise.dir/cmake_practise.cpp.o  -o cmake_practise  -Wl,-rpath,/home/pig/wxc/pig_home/practice_cplusplus/build/cmake_practise/add_definitions add_definitions/libcmake_add_definitions.so -lm 

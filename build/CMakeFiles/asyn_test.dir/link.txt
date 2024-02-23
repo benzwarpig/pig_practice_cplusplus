@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall  -O0 -Wall -g2 -ggdb   CMakeFiles/asyn_test.dir/lib/C++11/future_asyn/asyn_test.cpp.o  -o asyn_test  -lspdlog -lpthread -lm -lpthread -lm 

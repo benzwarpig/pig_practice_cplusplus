@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall  -O0 -Wall -g2 -ggdb   CMakeFiles/FactoryMode.dir/lib/DesignPattern/FactoryMode/FactoryMode.cpp.o  -o FactoryMode 

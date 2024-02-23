@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall  -O0 -Wall -g2 -ggdb   CMakeFiles/ObserverMode.dir/lib/DesignPattern/ObserverMode/ObserverMode.cpp.o  -o ObserverMode  -lspdlog -lpthread -lm -lpthread -lm 

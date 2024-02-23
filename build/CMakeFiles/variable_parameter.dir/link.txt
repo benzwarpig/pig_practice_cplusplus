@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall  -O0 -Wall -g2 -ggdb   CMakeFiles/variable_parameter.dir/lib/C++11/variable_parameter/variable_parameter.cpp.o  -o variable_parameter  -lspdlog -lpthread -lm -lpthread -lm 

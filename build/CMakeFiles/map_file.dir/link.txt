@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall  -O0 -Wall -g2 -ggdb   CMakeFiles/map_file.dir/lib/FILE/map_file.cpp.o  -o map_file 

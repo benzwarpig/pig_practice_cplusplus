@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../lib/CallBack/CallBack.h
+spdlog/spdlog.h
+-
+iostream
+-
+vector
+-
+
+../lib/DesignPattern/FactoryMode/FactoryMode.h
+iostream
+-
+map
+-
+
+/home/pig/wxc/pig_home/practice_cplusplus/main_node.cpp
+iostream
+-
+spdlog/spdlog.h
+-
+FactoryMode.h
+/home/pig/wxc/pig_home/practice_cplusplus/FactoryMode.h
+CallBack.h
+/home/pig/wxc/pig_home/practice_cplusplus/CallBack.h
+

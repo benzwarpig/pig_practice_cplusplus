@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall  -O0 -Wall -g2 -ggdb   CMakeFiles/ProtoType.dir/lib/DesignPattern/ProtoType/ProtoType.cpp.o  -o ProtoType  -lspdlog -lpthread -lm -lpthread -lm 

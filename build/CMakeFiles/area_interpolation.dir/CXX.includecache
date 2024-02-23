@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/pig/wxc/pig_home/practice_cplusplus/lib/algorithm/area_interpolation.cpp
+area_interpolation.h
+/home/pig/wxc/pig_home/practice_cplusplus/lib/algorithm/area_interpolation.h
+map
+-
+sstream
+-
+string
+-
+unordered_map
+-
+
+/home/pig/wxc/pig_home/practice_cplusplus/lib/algorithm/area_interpolation.h
+spdlog/spdlog.h
+-
+cmath
+-
+iostream
+-
+string
+-
+utility
+-
+vector
+-
+

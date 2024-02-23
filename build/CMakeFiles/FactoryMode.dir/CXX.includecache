@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/pig/wxc/pig_home/practice_cplusplus/lib/DesignPattern/FactoryMode/FactoryMode.cpp
+FactoryMode.h
+/home/pig/wxc/pig_home/practice_cplusplus/lib/DesignPattern/FactoryMode/FactoryMode.h
+spdlog/spdlog.h
+-
+iostream
+-
+
+/home/pig/wxc/pig_home/practice_cplusplus/lib/DesignPattern/FactoryMode/FactoryMode.h
+iostream
+-
+map
+-
+

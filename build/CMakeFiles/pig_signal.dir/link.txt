@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall  -O0 -Wall -g2 -ggdb   CMakeFiles/pig_signal.dir/linux/signal/pig_signal.cpp.o  -o pig_signal  -lspdlog -lpthread -lm -lpthread -lm 

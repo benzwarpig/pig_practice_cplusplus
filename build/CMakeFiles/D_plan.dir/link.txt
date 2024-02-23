@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall  -O0 -Wall -g2 -ggdb   CMakeFiles/D_plan.dir/lib/LeetCode/D_plan.cpp.o  -o D_plan 

@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/pig/wxc/pig_home/practice_cplusplus/lib/DesignPattern/ProtoType/ProtoType.cpp
+ProtoType.h
+/home/pig/wxc/pig_home/practice_cplusplus/lib/DesignPattern/ProtoType/ProtoType.h
+spdlog/spdlog.h
+-
+ProtoType.h
+/home/pig/wxc/pig_home/practice_cplusplus/lib/DesignPattern/ProtoType/ProtoType.h
+
+/home/pig/wxc/pig_home/practice_cplusplus/lib/DesignPattern/ProtoType/ProtoType.h
+spdlog/spdlog.h
+-
+array
+-
+type_traits
+-
+vector
+-
+

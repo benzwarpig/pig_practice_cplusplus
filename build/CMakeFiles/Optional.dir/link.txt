@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall  -O0 -Wall -g2 -ggdb   CMakeFiles/Optional.dir/lib/C++17/Optional/Optional.cpp.o  -o Optional  -lspdlog -lpthread -lm -lpthread -lm 
