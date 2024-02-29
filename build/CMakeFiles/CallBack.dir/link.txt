@@ -1,1 +1,0 @@
-/usr/bin/c++  -Wall  -O0 -Wall -g2 -ggdb   CMakeFiles/CallBack.dir/lib/CallBack/CallBack.cpp.o  -o CallBack 

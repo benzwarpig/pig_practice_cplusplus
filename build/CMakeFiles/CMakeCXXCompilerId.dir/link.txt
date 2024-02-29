@@ -1,1 +1,0 @@
-/usr/bin/c++  -Wall  -O0 -Wall -g2 -ggdb   CMakeFiles/CMakeCXXCompilerId.dir/CMakeFiles/3.16.0/CompilerIdCXX/CMakeCXXCompilerId.cpp.o  -o CMakeCXXCompilerId 

@@ -1,1 +1,0 @@
-/usr/bin/c++  -Wall  -O0 -Wall -g2 -ggdb   CMakeFiles/main_node.dir/main_node.cpp.o  -o main_node 

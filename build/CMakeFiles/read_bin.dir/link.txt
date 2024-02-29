@@ -1,1 +1,0 @@
-/usr/bin/c++  -Wall  -O0 -Wall -g2 -ggdb   CMakeFiles/read_bin.dir/lib/FILE/read_bin.cpp.o  -o read_bin 

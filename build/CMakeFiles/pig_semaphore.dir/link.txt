@@ -1,1 +1,0 @@
-/usr/bin/c++  -Wall  -O0 -Wall -g2 -ggdb   CMakeFiles/pig_semaphore.dir/linux/semaphore/pig_semaphore.cpp.o  -o pig_semaphore  -lspdlog -lpthread -lm -lpthread -lm 

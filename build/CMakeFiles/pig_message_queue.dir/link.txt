@@ -1,1 +1,0 @@
-/usr/bin/c++  -Wall  -O0 -Wall -g2 -ggdb   CMakeFiles/pig_message_queue.dir/linux/message_queue/pig_message_queue.cpp.o  -o pig_message_queue  -lspdlog -lpthread -lm -lpthread -lm 

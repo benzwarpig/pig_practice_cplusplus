@@ -1,1 +1,0 @@
-/usr/bin/c++  -Wall  -O0 -Wall -g2 -ggdb   CMakeFiles/function_templete.dir/lib/C++11/function_templete/function_templete.cpp.o  -o function_templete 

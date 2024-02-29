@@ -1,1 +1,0 @@
-/usr/bin/c++  -Wall  -O0 -Wall -g2 -ggdb   CMakeFiles/area_interpolation.dir/lib/algorithm/area_interpolation.cpp.o  -o area_interpolation  -lspdlog -lpthread -lm -lpthread -lm 

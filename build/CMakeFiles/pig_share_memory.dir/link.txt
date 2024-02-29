@@ -1,1 +1,0 @@
-/usr/bin/c++  -Wall  -O0 -Wall -g2 -ggdb   CMakeFiles/pig_share_memory.dir/linux/share_memory/pig_share_memory.cpp.o  -o pig_share_memory  -lspdlog -lpthread -lm -lpthread -lm 

@@ -1,1 +1,0 @@
-/usr/bin/c++  -Wall  -O0 -Wall -g2 -ggdb   CMakeFiles/copy_and_swap.dir/lib/C++11/CAS/copy_and_swap.cpp.o  -o copy_and_swap  -lspdlog -lpthread -lm -lpthread -lm 

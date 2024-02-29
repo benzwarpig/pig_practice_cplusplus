@@ -1,1 +1,0 @@
-/usr/bin/c++ -fPIC -Wall  -O0 -Wall -g2 -ggdb  -shared -Wl,-soname,libcmake_add_definitions.so -o libcmake_add_definitions.so CMakeFiles/cmake_add_definitions.dir/practise.cpp.o 
