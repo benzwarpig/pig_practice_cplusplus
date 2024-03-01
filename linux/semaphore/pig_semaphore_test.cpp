@@ -7,7 +7,7 @@
 #define kThreadName 2    // 线程间有名信号同步
 #define kProcessName 3   // 进程间有名信号同步
 
-#define SEM_TEST_OPTION kThreadName
+#define SEM_TEST_OPTION kThreadNoName
 
 int main() {
     spdlog::info("this is pig_semaphore_test");

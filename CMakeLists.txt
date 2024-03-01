@@ -18,6 +18,7 @@ message(STATUS "current_source_dir : ${CMAKE_CURRENT_SOURCE_DIR}")
 
 # find protobuf end
 include_directories(./lib/algorithm)
+include_directories(./lib/algorithm/graph_search)
 include_directories(./lib/DesignPattern/FactoryMode)
 include_directories(./lib/DesignPattern/ObserverMode)
 include_directories(./lib/CallBack)
@@ -69,3 +70,5 @@ target_link_libraries(pig_message_queue_A spdlog pthread ${ZMQ_LIBRARIES} m pthr
 target_link_libraries(pig_message_queue_B spdlog pthread ${ZMQ_LIBRARIES} m pthread)
 target_link_libraries(ObserverMode spdlog pthread ${ZMQ_LIBRARIES} m pthread)
 target_link_libraries(area_interpolation spdlog pthread ${ZMQ_LIBRARIES} m pthread)
+target_link_libraries(graph_search_planner spdlog pthread ${ZMQ_LIBRARIES} m pthread)
+
