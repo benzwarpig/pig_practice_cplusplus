@@ -99,4 +99,67 @@ struct Map {
     }
 };
 
+
+// bool FootprintHandle::isInside(double x, double y,
+//                                const std::vector<geometry::MpbPose> &top_footprint) {
+//     auto polygon_ = top_footprint;
+//     // 射线法判断点是否在多边形内部
+//     int i, j;
+//     bool c = false;
+//     for (i = 0, j = polygon_.size() - 1; i < polygon_.size(); j = i++) {
+//         if (((polygon_[i].y > y) != (polygon_[j].y > y)) &&
+//             (x < (polygon_[j].x - polygon_[i].x) * (y - polygon_[i].y) /
+//                          (polygon_[j].y - polygon_[i].y) +
+//                      polygon_[i].x)) {
+//             c = !c;
+//         }
+//     }
+//     return c;
+// }
+
+// std::vector<geometry::MpbGrid2D> FootprintHandle::topGrid2FootprintGrids(
+//     const std::vector<geometry::MpbGrid2D> &top_grid,
+//     const std::vector<geometry::MpbPose> &top_footprint) {
+//     if (top_grid.size() < 3) {
+//         TRACE_WARN("top grids is too less !!!");
+//         return {};
+//     }
+//     std::vector<geometry::MpbGrid2D> ret;
+//     int min_x = std::min({top_grid.at(0).x, top_grid.at(1).x, top_grid.at(2).x, top_grid.at(3).x});
+//     int max_x = std::max({top_grid.at(0).x, top_grid.at(1).x, top_grid.at(2).x, top_grid.at(3).x});
+//     int min_y = std::min({top_grid.at(0).y, top_grid.at(1).y, top_grid.at(2).y, top_grid.at(3).y});
+//     int max_y = std::max({top_grid.at(0).y, top_grid.at(1).y, top_grid.at(2).y, top_grid.at(3).y});
+
+//     auto checkOutLimit = [](int tmp) {
+//         tmp = std::abs(tmp);
+//         if (tmp < 0 || tmp >= 9999) {
+//             return false;
+//         }
+//         return true;
+//     };
+//     if (!checkOutLimit(min_x) || !checkOutLimit(max_x) || !checkOutLimit(min_y) ||
+//         !checkOutLimit(max_y)) {
+//         // TRACE_WARN("足迹超出边界,min_x:{%d},max_x:{%d},min_y:{%d},max_y:{%d}!!!!",
+//         // min_x, max_x,
+//         //            min_y, max_y);
+//         return {};
+//     }
+
+//     for (int i = min_x; i <= max_x; i++) {
+//         for (int j = min_y; j <= max_y; j++) {
+//             geometry::MpbPose pose = transform::MpbMapToWorld({i, j});
+
+//             if (isInside(pose.x, pose.y, top_footprint)) {
+//                 geometry::MpbGrid2D tmpGrid;
+//                 tmpGrid = transform::MpbWorldToMap(pose);
+
+//                 ret.push_back(tmpGrid);
+//             }
+//         }
+//     }
+
+//     return ret;
+// }
+
+
 };    // namespace graph_search
