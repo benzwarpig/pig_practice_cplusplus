@@ -77,11 +77,10 @@ struct Pairs {
     std::vector<Pair> value;
 };
 
-};  // namespace monitor
+};    // namespace monitor
 
 namespace {
-static std::vector<std::string> split(const std::string& value,
-                                      const std::string& tmp) {
+static std::vector<std::string> split(const std::string& value, const std::string& tmp) {
     std::vector<std::string> result;
     std::istringstream iss(value);
     std::string token;
@@ -92,7 +91,7 @@ static std::vector<std::string> split(const std::string& value,
 
     return result;
 }
-};  // namespace
+};    // namespace
 
 static std::map<monitor::TestType, std::vector<monitor::TestStruct>>
     collision_detail_counter_;
@@ -134,8 +133,7 @@ void UpdateCollisionDetail(const monitor::TestStruct& info) {
             // 如果从未插入过
             std::vector<monitor::TestStruct> collision_list;
             collision_list.push_back(info);
-            collision_detail_counter_.insert(
-                {info.type, std::move(collision_list)});
+            collision_detail_counter_.insert({info.type, std::move(collision_list)});
             auto search_1 = collision_detail_counter_.find(info.type);
             spdlog::info("如果从未插入过,{}", search_1->second.size());
         } else {

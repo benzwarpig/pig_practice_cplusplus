@@ -2,11 +2,11 @@
 
 #include <spdlog/spdlog.h>
 
-#include <cmath>     // NOLINT
-#include <iostream>  // NOLINT
-#include <string>    // NOLINT
-#include <utility>   // NOLINT
-#include <vector>    // NOLINT
+#include <cmath>       // NOLINT
+#include <iostream>    // NOLINT
+#include <string>      // NOLINT
+#include <utility>     // NOLINT
+#include <vector>      // NOLINT
 
 class Point2D {
 public:
@@ -31,12 +31,10 @@ public:
 
 class AreaInterpolation {
 public:
-    explicit AreaInterpolation(const std::vector<Point2D>& points,
-                               double step = k_step)
+    explicit AreaInterpolation(const std::vector<Point2D>& points, double step = k_step)
         : m_step(step), m_points(points) {}
 
-    explicit AreaInterpolation(std::vector<Point2D>&& points,
-                               double step = k_step)
+    explicit AreaInterpolation(std::vector<Point2D>&& points, double step = k_step)
         : m_step(step), m_points(std::move(points)) {}
 
     ~AreaInterpolation() {}
@@ -77,8 +75,7 @@ private:
     }
     // 获得两点间直线距离
     double getTwoPointDistance(Point2D& first, Point2D& second) {
-        return sqrt(pow((first.x() - second.x()), 2) +
-                    pow((first.y() - second.y()), 2));
+        return sqrt(pow((first.x() - second.x()), 2) + pow((first.y() - second.y()), 2));
     }
 
 private:
