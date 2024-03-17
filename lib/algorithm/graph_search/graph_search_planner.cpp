@@ -14,27 +14,50 @@ static inline std::vector<graph_search::Grid2D> RemoveIslandChain(
     while (input_back.size() != input.size()) {
         // 1. 查找种子点
         graph_search::Grid2D seed;
+        bool is_find = false;
         for (const auto& tmp : input) {
             auto grid_iter = input_back.find(tmp);
             if (grid_iter == input_back.end()) {
                 seed = tmp;
+                is_find = true;
                 break;
             }
         }
-
+        if (!is_find) {
+            break;
+        }
         // 2. 从种子开始搜索封闭链条，有序
         std::vector<graph_search::Grid2D> chain;
         auto is_accessible2 = [](const graph_search::Map& map,
                                  const graph_search::Grid2D& cur_grid) {
+            auto neighbor_four = graph_search::get4Neighbors();
+            bool is_frontier = false;
+            for (const auto neigh : neighbor_four) {
+                graph_search::Grid2D tmp_grid;
+                tmp_grid.x = cur_grid.x + neigh.x;
+                tmp_grid.y = cur_grid.y + neigh.y;
+                if (tmp_grid.x >= 0 && tmp_grid.y >= 0 && tmp_grid.x < map.kCol &&
+                    tmp_grid.y < map.kRow) {
+                    if (map.map_[tmp_grid.x][tmp_grid.y] == 0) {
+                        is_frontier = true;
+                    }
+                }
+            }
             bool is_free = map.map_[cur_grid.x][cur_grid.y] == 255;
             return cur_grid.x >= 0 && cur_grid.y >= 0 && cur_grid.x < map.kCol &&
-                   cur_grid.y < map.kRow && is_free;    //  && is_free
+                   cur_grid.y < map.kRow && is_free && is_frontier;    //  && is_free
         };
-        spdlog::info("seed:[{},{}]", seed.x, seed.y);
         dfs_planner.search(is_accessible2, nullptr, map, seed,
+                           graph_search::Map{}.getCenterGrid(),
                            graph_search::get8Neighbors(), chain);
-        for (const auto& tmp : chain) {
-            input_back.emplace(tmp);
+        if (chain.size() == 0) {
+            spdlog::warn("seed:[{},{}] can not accessible", seed.x, seed.y);
+            input_back.emplace(seed);
+        } else {
+            for (const auto& tmp : chain) {
+                // spdlog::info("tmp:[{},{}]", tmp.x, tmp.y);
+                input_back.emplace(tmp);
+            }
         }
         chains.emplace_back(std::move(chain));
     }
@@ -49,6 +72,10 @@ static inline std::vector<graph_search::Grid2D> RemoveIslandChain(
             tmp_size = chains.at(i).size();
         }
         spdlog::info("i:{},chain.size:{}", i, chains.at(i).size());
+        // for (int j = 0; j < chains.at(i).size(); j++) {
+        //     spdlog::info("    j:{},grid[{}][{}]", j, chains.at(i).at(j).x,
+        //                  chains.at(i).at(j).y);
+        // }
     }
     ret = std::move(chains.at(max_index));
     return ret;
@@ -57,12 +84,12 @@ static inline std::vector<graph_search::Grid2D> RemoveIslandChain(
 int main() {
     spdlog::info("enter graph_search_planner once");
 
-    // 构建地图并载入
+    //
     // clang-format off
     uint8_t tmp_map[10][20] = {
         {255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255},
-        {255,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, 255},
-        {255,   0,   0,   0,   0,   0,   0,   0,   255,   255,   255,   0,   0,   0,   0,   0,   0,   0,   0, 255},
+        {255,   0,   0,   0,   0,   0,   0,   0,   0,   255,   0,   0,   0,   0,   0,   0,   0,   0,   0, 255},
+        {255,   0,   0,   0,   0,   0,   0,   0,   255,   0,   255,   0,   0,   0,   0,   0,   0,   0,   0, 255},
         {255,   0,   0,   0,   0,   0,   0,  255,   0,   0,   0,   255,   0,   0,   0,   0,   0,   0,   0, 255},
         {255,   0,   0,   0,   0,   0,   0,   255,   0,   255,   0,   255,   0,   0,   0,   0,   0,   0,   0, 255},
         {255,   0,   0,   0,   0,   0,   0,   255,  0 ,   0,   0,   255, 0,   0,   0,   0,   0,   0,   0, 255},
@@ -80,7 +107,7 @@ int main() {
                         const graph_search::Map& map) { return false; };
     auto is_accessible = [&map_test](const graph_search::Grid2D& cur_grid,
                                      const graph_search::Map& map) {
-        bool is_free = map_test.map_[cur_grid.x][cur_grid.y] < 255;
+        bool is_free = map_test.map_[cur_grid.x][cur_grid.y] == 0;
         return cur_grid.x >= 0 && cur_grid.y >= 0 && cur_grid.x < map_test.kCol &&
                cur_grid.y < map_test.kRow && is_free;    //  && is_free
     };
@@ -102,9 +129,9 @@ int main() {
     auto iter = tmp_vis.begin();
     std::vector<graph_search::Grid2D> chain;
     // 1. 泛洪搜索区域边界封闭链
-    dfs_planner.search(is_accessible2, nullptr, map_test, *iter,
-                       graph_search::get8Neighbors(), chain);
-    spdlog::info("wxc chain size:{}", chain.size());
+    // dfs_planner.search(is_accessible2, nullptr, map_test, *iter,
+    //                    graph_search::get8Neighbors(), chain);
+    // spdlog::info("wxc chain size:{}", chain.size());
 
     // 2. 去除孤岛链，边界有序化
     auto remove_tmp = RemoveIslandChain(map_test, tmp_vis);

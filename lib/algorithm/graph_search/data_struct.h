@@ -60,6 +60,10 @@ public:
         return dx * dx + dy * dy;
     }
 
+    inline int EuclideanDistance(const Grid2D &to) const {
+        return std::abs(to.x - this->x) + std::abs(to.y - this->y);
+    }
+
     ~Grid2D() = default;
 };
 
@@ -110,7 +114,7 @@ struct Map {
     const int kRow = 20;
     uint8_t map_[10][20];
 
-    Grid2D getCenterGrid() { return {kCol / 2, kRow / 2}; }
+    inline Grid2D getCenterGrid() { return {kCol / 2, kRow / 2}; }
 
     void loadMap(uint8_t tmp[10][20]) {
         for (int i = 0; i < 10; i++) {
