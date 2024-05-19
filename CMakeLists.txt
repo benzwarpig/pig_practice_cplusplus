@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-add_compile_options(-std=c++14)
+add_compile_options(-std=c++17)
 
 project(PracticeCPlusPlus)
 
@@ -33,6 +33,7 @@ include_directories(./lib/C++11/lambda)
 include_directories(./lib/C++11/variable_parameter)
 
 include_directories(./lib/C++17/Optional)
+include_directories(./lib/C++17/any)
 
 # include_directories for linux func
 include_directories(./linux/message_queue)
@@ -60,6 +61,7 @@ target_link_libraries(copy_and_swap spdlog pthread ${ZMQ_LIBRARIES} m pthread)
 target_link_libraries(ThreadPool spdlog pthread ${ZMQ_LIBRARIES} m pthread)
 target_link_libraries(ProtoType spdlog pthread ${ZMQ_LIBRARIES} m pthread)
 target_link_libraries(Optional spdlog pthread ${ZMQ_LIBRARIES} m pthread)
+target_link_libraries(any spdlog pthread ${ZMQ_LIBRARIES} m pthread)
 target_link_libraries(variable_parameter spdlog pthread ${ZMQ_LIBRARIES} m pthread)
 target_link_libraries(pig_signal spdlog pthread ${ZMQ_LIBRARIES} m pthread)
 target_link_libraries(pig_share_memory spdlog pthread ${ZMQ_LIBRARIES} m pthread)
@@ -71,4 +73,3 @@ target_link_libraries(pig_message_queue_B spdlog pthread ${ZMQ_LIBRARIES} m pthr
 target_link_libraries(ObserverMode spdlog pthread ${ZMQ_LIBRARIES} m pthread)
 target_link_libraries(area_interpolation spdlog pthread ${ZMQ_LIBRARIES} m pthread)
 target_link_libraries(graph_search_planner spdlog pthread ${ZMQ_LIBRARIES} m pthread)
-
